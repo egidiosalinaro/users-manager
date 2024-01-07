@@ -6,6 +6,7 @@ export interface User {
   surname: string;
   username: string;
   gender: string;
+  last_modified: string;
   deleted: string;
 }
 

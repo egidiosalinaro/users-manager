@@ -62,7 +62,7 @@ const PageContent: React.FC<PageContentProps> = ({ users }) => {
         return (
           <div
             key={customer.id}
-            className="flex flex-col justify-between rounded-md bg-neutral-400/10 hover:bg-neutral-400/20 transition p-3 h-36 w-full"
+            className="flex flex-col justify-between rounded-md bg-neutral-400/10 hover:bg-neutral-400/20 transition p-3 h-43 w-full"
           >
             <div className="text-center mb-4">
               <h3 className="text-xl font-semibold w-full mb-2">
@@ -75,10 +75,14 @@ const PageContent: React.FC<PageContentProps> = ({ users }) => {
                   isDeleted ? "text-red-500" : "text-neutral-400 text-md"
                 }
               >
-                {isDeleted ? "DELETED" : `${customer.username} | ${genderText}`}
+                {isDeleted
+                  ? "DELETED"
+                  : customer.username
+                  ? `${customer.username} | ${genderText}`
+                  : "No user data entered"}
               </h4>
             </div>
-            <div className="mt-auto">
+            <div className="flex flex-col justify-end h-full">
               <div className="flex justify-between space-x-2 w-full">
                 {!isDeleted ? (
                   <>
@@ -104,6 +108,16 @@ const PageContent: React.FC<PageContentProps> = ({ users }) => {
                   </Button>
                 )}
               </div>
+              <p
+                className={`text-neutral-500 text-sm mt-2 text-center ${
+                  customer.last_modified ? "" : "invisible"
+                }`}
+              >
+                Last:{" "}
+                {customer.last_modified
+                  ? new Date(customer.last_modified).toLocaleString()
+                  : "Placeholder"}
+              </p>
             </div>
           </div>
         );

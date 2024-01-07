@@ -12,10 +12,11 @@ const useDeleteUser = () => {
 
   const deleteUser = async (customerId: string, status: string) => {
     setIsLoading(true);
+    const now = new Date().toISOString();
 
     const { error } = await supabaseClient
       .from("users")
-      .update({ deleted: status })
+      .update({ deleted: status, last_modified: now })
       .eq("id", customerId);
 
     setIsLoading(false);

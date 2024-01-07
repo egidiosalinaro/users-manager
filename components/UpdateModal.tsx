@@ -19,6 +19,7 @@ const UpdateModal = () => {
   const { user } = useUser();
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
+  const now = new Date().toISOString();
 
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
@@ -61,6 +62,7 @@ const UpdateModal = () => {
           surname: values.surname,
           username: values.username,
           gender: values.gender,
+          last_modified: now,
         })
         .eq("id", updateModal.customerId);
 

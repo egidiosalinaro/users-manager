@@ -191,6 +191,7 @@ export interface Database {
           username: string | null;
           gender: string | null;
           deleted: string;
+          last_modified: string;
           id: string;
           payment_method: Json | null;
         };
