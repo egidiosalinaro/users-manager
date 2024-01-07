@@ -12,6 +12,7 @@ import { useUser } from "@/hooks/useUser";
 import Modal from "@/components/Modal";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import useUserUpdateStore from "@/hooks/useUserUpdate";
 
 const UpdateModal = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -20,6 +21,7 @@ const UpdateModal = () => {
   const supabaseClient = useSupabaseClient();
   const router = useRouter();
   const now = new Date().toISOString();
+  const { incrementUpdateCount } = useUserUpdateStore();
 
   const { register, handleSubmit, reset } = useForm<FieldValues>({
     defaultValues: {
@@ -73,6 +75,7 @@ const UpdateModal = () => {
 
       router.refresh();
       toast.success("User info successfully updated!");
+      incrementUpdateCount();
       reset();
       updateModal.onClose();
     } catch (error) {
