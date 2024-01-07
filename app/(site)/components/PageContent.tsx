@@ -7,6 +7,7 @@ import { useUser } from "@/hooks/useUser";
 import { User as Customer } from "@/types";
 
 import Button from "@/components/Button";
+import useDeleteUser from "@/hooks/useDeleteUser";
 
 interface PageContentProps {
   users: Customer[];
@@ -16,12 +17,29 @@ const PageContent: React.FC<PageContentProps> = ({ users }) => {
   const authModal = useAuthModal();
   const updateModal = useUpdateModal();
   const { user } = useUser();
+  const { deleteUser } = useDeleteUser();
 
-  const onClick = (customerId: string) => {
+  const handleUpdate = (customerId: string) => {
     if (!user) {
       authModal.onOpen();
     } else {
       updateModal.onOpen(customerId);
+    }
+  };
+
+  const handleDelete = (customerId: string) => {
+    if (!user) {
+      authModal.onOpen();
+    } else {
+      deleteUser(customerId, "y");
+    }
+  };
+
+  const handleRestore = (customerId: string) => {
+    if (!user) {
+      authModal.onOpen();
+    } else {
+      deleteUser(customerId, "n");
     }
   };
 
@@ -39,6 +57,7 @@ const PageContent: React.FC<PageContentProps> = ({ users }) => {
             : customer.gender === "f"
             ? "Female"
             : "";
+        const isDeleted = customer.deleted === "y";
 
         return (
           <div
@@ -46,29 +65,44 @@ const PageContent: React.FC<PageContentProps> = ({ users }) => {
             className="flex flex-col justify-between rounded-md bg-neutral-400/10 hover:bg-neutral-400/20 transition p-3 h-36 w-full"
           >
             <div className="text-center mb-4">
-              {" "}
-              {/* Added margin-bottom */}
               <h3 className="text-xl font-semibold w-full mb-2">
-                {" "}
-                {/* Added margin-bottom */}
                 {hasFullName
                   ? `${customer.name} ${customer.surname}`
                   : `Customer ${index + 1}`}
               </h3>
-              <h4 className="text-neutral-400 text-md">
-                {!hasFullName
-                  ? "Please enter user data"
-                  : `${customer.username} | ${genderText}`}
+              <h4
+                className={
+                  isDeleted ? "text-red-500" : "text-neutral-400 text-md"
+                }
+              >
+                {isDeleted ? "DELETED" : `${customer.username} | ${genderText}`}
               </h4>
             </div>
             <div className="mt-auto">
-              {" "}
-              {/* Align buttons to the bottom */}
               <div className="flex justify-between space-x-2 w-full">
-                <Button onClick={() => onClick(customer.id)} className="py-2">
-                  Modify
-                </Button>
-                <Button className="bg-red-500 py-2">Delete</Button>
+                {!isDeleted ? (
+                  <>
+                    <Button
+                      onClick={() => handleUpdate(customer.id)}
+                      className="py-2"
+                    >
+                      Modify
+                    </Button>
+                    <Button
+                      onClick={() => handleDelete(customer.id)}
+                      className="bg-red-500 py-2"
+                    >
+                      Delete
+                    </Button>
+                  </>
+                ) : (
+                  <Button
+                    onClick={() => handleRestore(customer.id)}
+                    className="bg-emerald-500 py-2"
+                  >
+                    Restore
+                  </Button>
+                )}
               </div>
             </div>
           </div>

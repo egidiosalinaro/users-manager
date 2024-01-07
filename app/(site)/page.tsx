@@ -16,7 +16,8 @@ export default async function Home() {
             Manage platform Users
           </h1>
           <p>
-            You can only modify your own password by logging out and selecting
+            You can only modify your own details. Modify password by logging out
+            and selecting
             <strong> Forgot your password?</strong>.
           </p>
         </div>
