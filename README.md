@@ -1,9 +1,9 @@
 <a name="readme-top"></a>
 
-<h1 align="center">Users Manager :busts_in_silhouette: Simplifying User Management</h1>
+<h1 align="center">Users Manager :busts_in_silhouette: Streamlining User Management</h1>
 
 <p align="center">
-An open-source full stack application for efficient and intuitive user management. <br> <a href="https://users-manager-one.vercel.app/">Try it Here!</a>
+An open-source full stack application designed for efficient and intuitive user management. <br> <a href="https://users-manager.vercel.app/">Try it Here!</a>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -42,77 +42,90 @@ An open-source full stack application for efficient and intuitive user managemen
 
 ## :question: About The Project
 
-Users Manager is an innovative open-source solution designed to streamline the process of user management in various applications and platforms.
+Users Manager is a cutting-edge, open-source solution designed to streamline user management processes in various applications and platforms, featuring a centralized handler with a user-friendly interface, efficient data handling, flexible integration, customizable settings, and secure and reliable performance【32†source】.
 
 ### :joystick: Usage
 
-Users Manager provides a user-friendly interface for managing user data. Key features include:
-
-- _<ins>User Profiles</ins>_: Easily manage user information and access control.
-- _<ins>Data Security</ins>_: Robust security features to protect user data.
-- _<ins>Scalable Architecture</ins>_: Efficiently handle growing user bases.
-- _<ins>Customizable Settings</ins>_: Adapt the manager to fit your specific needs.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Key features include user profiles management, robust data security, scalable architecture, and customizable settings.
 
 ### :bricks: Built With
 
-This project is built using modern technologies including [insert technologies used, similar to the Scherzo project].
+This project is built using modern technologies with a primary focus on TypeScript (99.1% of the codebase)【34†source】. Specific technologies used include:
 
 #### 🖥 Back End
-
-[Back End technologies and descriptions]
+- SQL
+- Query Builder
+- Supabase
 
 #### 👩‍💻 Front End
-
-[Front End technologies and descriptions]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- GETTING STARTED -->
+- TypeScript
+- Tailwind CSS
 
 ## :clapper: Getting Started
 
-This section should include information about deploying the app and how users can get started with their local setup.
+I deployed my Next.js app using the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js. <br>
+Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+You can also start this app on your local machine, following these steps:
 
 ### :pencil: Prerequisites
 
-Instructions for cloning the repository and setting up the environment.
+- clone this repository
 
+  ```sh
+  git clone https://github.com/egidiosalinaro/users-manager
+  ```
+
+- install all libraries and dependencies needed for this app
+
+  ```sh
+  npm install
+  ```
 ### :gear: Installation
 
-Step-by-step guide to get the development environment running.
+Once downloaded this repo, you are ready to go. <br> Now you can:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- configure your Supabase database as I did
 
-<!-- ROADMAP -->
+  to match the routes called in this repo, your Supabase database should have a table called `users`
+
+- connect your Supabase and Stripe account
+
+  create a `.env.local` file (you won't find mine because it is in the `.gitignore` list) containing all the environment variables required for Supabase to work, and fill them with your own keys
+
+  ```sh
+  NEXT_PUBLIC_SUPABASE_URL=
+  NEXT_PUBLIC_SUPABASE_ANON_KEY=
+  SUPABASE_SERVICE_ROLE_KEY=
+  ```
+
+- start the app locally
+
+  ```sh
+  npm run dev
+  ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app in action.
 
 ## :world_map: Roadmap
 
-[Include a list of completed and upcoming tasks, similar to the Scherzo project.]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
+- [x] `.env.local` file containing keys
+- [x] setting up Supabase
+- [x] app and pages layout configuration
+- [x] handling login and logout
+- [x] creating hooks and actions
+- [x] delete user logic
+- [x] last modified property
+- [x] report about customers gender
 
 ## :computer: Contributing
 
-Encourage contributions by explaining how others can contribute to the project.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
+Contributions are welcome. Please follow the guidelines to contribute to the project.
 
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTACT -->
-
 ## Contact
 
-Your email or other contact information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+For any inquiries, contact egidiosalinaro@gmail.com.
