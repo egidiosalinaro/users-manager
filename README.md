@@ -89,7 +89,7 @@ Once downloaded this repo, you are ready to go. <br> Now you can:
 
   to match the routes called in this repo, your Supabase database should have a table called `users`
 
-- connect your Supabase and Stripe account
+- connect your Supabase account
 
   create a `.env.local` file (you won't find mine because it is in the `.gitignore` list) containing all the environment variables required for Supabase to work, and fill them with your own keys
 
