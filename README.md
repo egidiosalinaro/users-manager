@@ -42,7 +42,7 @@ An open-source full stack application designed for efficient and intuitive user 
 
 ## :question: About The Project
 
-Users Manager is a cutting-edge, open-source solution designed to streamline user management processes in various applications and platforms, featuring a centralized handler with a user-friendly interface, efficient data handling, flexible integration, customizable settings, and secure and reliable performance【32†source】.
+Users Manager is a cutting-edge, open-source solution designed to streamline user management processes in various applications and platforms, featuring a centralized handler with a user-friendly interface, efficient data handling, flexible integration, customizable settings, and secure and reliable performance.
 
 ### :joystick: Usage
 
@@ -50,7 +50,7 @@ Key features include user profiles management, robust data security, scalable ar
 
 ### :bricks: Built With
 
-This project is built using modern technologies with a primary focus on TypeScript (99.1% of the codebase)【34†source】. Specific technologies used include:
+This project is built using modern technologies with a primary focus on TypeScript (99% of the codebase). Specific technologies used include:
 
 #### 🖥 Back End
 - SQL
