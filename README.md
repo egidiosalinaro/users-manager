@@ -3,7 +3,7 @@
 <h1 align="center">Users Manager :busts_in_silhouette: Streamlining User Management</h1>
 
 <p align="center">
-An open-source full stack application designed for efficient and intuitive user management. <br> <a href="https://users-manager.vercel.app/">Try it Here!</a>
+An open-source full stack application designed for efficient and intuitive user management. <br> <a href="https://users-manager-one.vercel.app/">Try it Here!</a>
 </p>
 
 <!-- TABLE OF CONTENTS -->
