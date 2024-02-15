@@ -12,9 +12,7 @@ export default async function Home() {
     <div className="bg-neutral-900 m-2 rounded-lg min-h-screen w-full overflow-hidden overflow-y-auto">
       <Header>
         <div className="mb-2">
-          <h1 className="text-white text-3xl font-semibold">
-            Manage platform Users
-          </h1>
+          <h1 className="text-white text-3xl font-semibold">Sisal</h1>
           <p>
             You can only modify your own details. Modify password by logging out
             and selecting
